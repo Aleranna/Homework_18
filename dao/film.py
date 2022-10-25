@@ -23,7 +23,7 @@ class FilmDAO:
     def post(self, film: Film):
         self.session.add(film)
         self.session.commit()
-        return 'film added', 201
+        return {"location": f"/films/{film.id}"}, 201
 
     def delete(self, fid):
         film = self.get_one(fid)

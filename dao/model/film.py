@@ -20,9 +20,9 @@ class Film(db.Model):
 
 class FilmSchema(Schema):
     id = fields.Integer(dump_only=True)
-    title = db.Column(db.String)
-    description = db.Column(db.String)
-    trailer = db.Column(db.String)
+    title = fields.String()
+    description = fields.String()
+    trailer = fields.String()
     year = fields.Integer()
     rating = fields.Integer()
     genre_id = fields.Integer()
